@@ -124,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+
 
 # 我的设置
 LOGIN_URL = '/users/login/'
@@ -135,7 +135,7 @@ BOOTSTRAP3 = {
 }
 
 # Heroku设置
-if os.getcwd() == '/app':
+if os.getcwd() == '/app' :
     import dj_database_url
     DATABASES = {
         'default':dj_database_url.config(default='postgres://localhost')
@@ -150,6 +150,7 @@ if os.getcwd() == '/app':
     # 静态资产配置
     BASE_DIR = os.path.dirname(os.path.abspath(_file_))
     STATIC_ROOT = 'staticfiles'
+    STATIC_URL = '/static/'
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
